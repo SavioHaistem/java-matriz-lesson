@@ -34,9 +34,18 @@ public class Main {
             for (int countColumns = 0; countColumns < matriz[countLines].length; countColumns++) {
                 if (matriz[countLines][countColumns].equals(wantedNumber)) {
                     System.out.printf("Position: L: %d, C: %d %n", countLines, countColumns);
-                    if (matriz[countLines][(countColumns - 1)] >= 0) {
+                    if (countColumns - 1 >= 0) {
                         System.out.println("left: " + matriz[countLines][countColumns - 1]);
                     };
+                    if (countLines - 1 >= 0) {
+                        System.out.println("top: " + matriz[countLines - 1][countColumns]);
+                    }
+                    if (countColumns + 1 < matriz[countLines].length) {
+                        System.out.println("rigth: " + matriz[countLines][countColumns + 1]);
+                    }
+                    if (countLines + 1 < matriz.length) {
+                        System.out.println("down: " + matriz[countLines + 1][countColumns]);
+                    }
                 }
             }
         }
